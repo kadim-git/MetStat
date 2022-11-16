@@ -1,0 +1,72 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Погодная станция, Таблица, Все параметры. </h2>
+
+  <p>Количество записей в Базе данных: {{ num_instances }}</p>
+
+    <p>Информация на странице не обновляется автоматически. Использоуйте "Обновить" (F5).</p>
+
+<style>
+ table, th, td {border: 1px solid black;}
+ td {padding: 3px}
+</style>
+  <table class="dataframe">
+  <thead>
+    <tr >
+
+      <th>№</th>
+      <th>DATE</th>
+      <th>TA</th>
+      <th>DP</th>
+      <th>WC</th>
+        <th>RH</th>
+        <th>PA</th>
+        <th>PR</th>
+
+        <th>PR1H</th>
+        <th>PR24h</th>
+        <th>SR_1M</th>
+        <th>SR_1D</th>
+        <th>SR_45_1M</th>
+        <th>SR_45_1D</th>
+        <th>SD_1H</th>
+        <th>SD_1D</th>
+        <th>SD_45_1H</th>
+        <th>SD_45_1D</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+    {% for row in records %}
+    <tr>
+    <td>{{ row.id }}</td>
+      <td>{{ row.DATE|date:"Y-m-d   H:i:s"  }}</td>
+      <td>{{ row.TA }}</td>
+      <td>{{ row.DP }}</td>
+
+     <td>{{ row.WC }}</td>
+    <td>{{ row.RH }}</td>
+    <td>{{ row.PA }}</td>
+    <td>{{ row.PR }}</td>
+
+    <td>{{ row.PR1H }}</td>
+    <td>{{ row.PR24h }}</td>
+    <td>{{ row.SR_1M }}</td>
+    <td>{{ row.SR_1D }}</td>
+    <td>{{ row.SR_45_1M }}</td>
+    <td>{{ row.SR_45_1D }}</td>
+    <td>{{ row.SD_1H }}</td>
+    <td>{{ row.SD_1D }}</td>
+    <td>{{ row.SD_45_1H }}</td>
+    <td>{{ row.SD_45_1D }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+   </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Измерения Ветра на погодной станции, Таблица, Все параметры. </h2>
+
+  <p>Количество записей в Базе данных: {{ num_instances }}</p>
+
+    <p>Информация на странице не обновляется автоматически. Использоуйте "Обновить" (F5).</p>
+
+<style>
+ table, th, td {border: 1px solid black;}
+ td {padding: 3px}
+</style>
+  <table class="dataframe">
+  <thead>
+    <tr >
+      <th>№</th>
+      <th>DATE</th>
+      <th>WS1AVG</th>
+      <th>WD1AVG</th>
+      <th>WS1MIN2</th>
+        <th>WS1AVG2</th>
+        <th>WS1MAX2</th>
+        <th>WD1MIN2</th>
+
+        <th>WD1AVG2</th>
+        <th>WD1MAX2</th>
+        <th>WS1MIN10</th>
+        <th>WS1AVG10</th>
+        <th>WS1MAX10</th>
+        <th>WD1MIN10</th>
+        <th>WD1AVG10</th>
+        <th>WD1MAX10</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+    {% for row in records %}
+    <tr>
+    <td>{{ row.id }}</td>
+      <td>{{ row.DATE|date:"Y-m-d   H:i:s"  }}</td>
+      <td>{{ row.WS1AVG }}</td>
+      <td>{{ row.WD1AVG }}</td>
+
+     <td>{{ row.WS1MIN2 }}</td>
+    <td>{{ row.WS1AVG2 }}</td>
+    <td>{{ row.WS1MAX2 }}</td>
+    <td>{{ row.WD1MIN2 }}</td>
+
+    <td>{{ row.WD1AVG2 }}</td>
+    <td>{{ row.WD1MAX2 }}</td>
+    <td>{{ row.WS1MIN10 }}</td>
+    <td>{{ row.WS1AVG10 }}</td>
+    <td>{{ row.WS1MAX10 }}</td>
+    <td>{{ row.WD1MIN10 }}</td>
+    <td>{{ row.WD1AVG10 }}</td>
+    <td>{{ row.WD1MAX10 }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+   </tbody>
+</table>
+
+{% endblock %}

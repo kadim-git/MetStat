@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Главная страница, Погода, Ветер, Инвертор </h2>
+    <p>Информация на странице не обновляется автоматически. Использоуйте "Обновить" (F5).</p>
+
+    <h3>Погода</h3>
+  <ul>
+    <li><strong>Время:</strong> {{ rec_meteo.DATE|date:"Y-m-d   H:i:s" }}</li>
+    <li><strong>Cреднее значение температуры за 1 минуту:  ( °C ):</strong> {{ rec_meteo.TA }}</li>
+    <li><strong>Точка росы  ( °C ):</strong> {{ rec_meteo.DP }}</li>
+    <li><strong>Охлаждение ветром ( °C ):</strong> {{ rec_meteo.WC }}</li>
+    <li><strong>Относительная влажность (%):</strong> {{ rec_meteo.RH }}</li>
+  </ul>
+    <h3>Ветер</h3>
+    <ul>
+    <li><strong>Время:</strong> {{ rec_wind.DATE|date:"Y-m-d   H:i:s" }}</li>
+    <li><strong>скорость ветра (м/с)  за 3 сек:</strong> {{ rec_wind.WS1AVG }}</li>
+    <li><strong>направление ветра (град) за 3 сек:  ( °C ):</strong> {{ rec_wind.WD1AVG }}</li>
+    <li><strong>скорость ветра (м/с) минимальное значение за 2 минуты:</strong> {{ rec_wind.WS1MIN2 }}</li>
+    <li><strong>скорость ветра (м/с) среднее значение за 2 минуты:</strong> {{ rec_wind.WS1AVG2 }}</li>
+  </ul>
+{% endblock %}
