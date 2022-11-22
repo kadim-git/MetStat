@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-=8l4v-6mhrm7a44kmc6uu4u@^z2o1#y*q)ld7pz@*b=xo)l#d!
 DEBUG = True
 
 ALLOWED_HOSTS = [
+        'kadim.pythonanywhere.com',
 		'kadim.eu-gb.mybluemix.net',
 		'127.0.0.1',
 ]
@@ -122,6 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#New for PYthonAny
+from os.path import join as my_join
+STATIC_ROOT = my_join(BASE_DIR, "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
