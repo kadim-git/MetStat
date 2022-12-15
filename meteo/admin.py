@@ -7,7 +7,7 @@ from .models import WindRecord
 #admin.site.register(MeteoRecord)
 # Define the admin class
 class MeteoRecordAdmin(admin.ModelAdmin):
-    list_display= ('id','DATE', 'TA', 'DP', 'WC','RH','PA','PR','PR1H','PR24h','SR_1M','SR_1D','SR_45_1M','SR_45_1D','SD_1H','SD_1D','SD_45_1H','SD_45_1D')
+    list_display= ('id','DATE', 'TA', 'DP', 'WC','RH','PA','PR','PR1H','PR24H','SR_1M','SR_1D','SR_45_1M','SR_45_1D','SD_1H','SD_1D','SD_45_1H','SD_45_1D')
     list_filter = ('DATE', 'TA', 'DP')
     list_per_page = 25
 
